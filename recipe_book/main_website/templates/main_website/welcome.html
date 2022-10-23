@@ -6,10 +6,11 @@
     <ul>
         {% for recipe in recipes %}
             <li>
-                <a href="{% url 'detail' meeting.id %}">
-                    {{ recipe.title }}
+                <a href="{% url 'detail' recipe.slug %}">
+                    {{ recipe }}
                 </a>
             </li>
         {% endfor %}
     </ul>
+    <a href="{% url 'new' %}">Create</a>
 {% endblock %}
