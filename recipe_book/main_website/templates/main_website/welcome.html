@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Welcome!{% endblock %}
+{% block content %}
+    <h1>Welcome to my recipe book!</h1>
+    <h2>Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">
+                    {{ recipe.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
