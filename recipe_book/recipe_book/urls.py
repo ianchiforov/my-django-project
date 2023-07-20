@@ -20,5 +20,7 @@ from main_website.views import welcome
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome, name='welcome'),
-    path('recipes/', include('recipes.urls'))
+    path('recipes/', include('recipes.urls')),
+    # path('accounts/', include('accounts.urls')),
+    # path("accounts/", include("django.contrib.auth.urls")),
 ]

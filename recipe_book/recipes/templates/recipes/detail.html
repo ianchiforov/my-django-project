@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{recipe.title}}</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}{{recipe.title}}{% endblock %}
+{% block content %}
     <h1>{{recipe.name}}</h1>
     <p>Info about recipe!</p>
-    <p>{{recipe}}</p>
+    <p>Estimated time: {{ recipe.time_to_cook }} minute(s)</p>
+    <p>Complexity: {{ recipe.complexity }} / 5</p>
+    <p>{{ recipe.servings }} serving(s)</p>
+    <p>Steps: {{ recipe.steps_to_cook }}</p>
+    <p>Ingredients: {{ recipe.ingredients }}</p>
+    {% for ingredient in recipe.ingredients.all %}
+        <p>{{ ingredient }}</p>
+    {% endfor %}
     <p><a href="{% url 'welcome' %}">Go Home</a></p>
-</body>
-</html>
+{% endblock %}

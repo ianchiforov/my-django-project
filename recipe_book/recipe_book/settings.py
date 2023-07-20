@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_website',
     'recipes',
+    'accounts',
+    'modeltranslation',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/"
+AUTOSLUG_MODELTRANSLATION_ENABLE = True
+TRANSLATABLE_MODEL_MODULES = ["app1.models", "app2.models", "fees.models", "menus.models", ...]
+IS_MONOLINGUAL = False
+# AUTH_USER_MODEL = "users.Profile"
